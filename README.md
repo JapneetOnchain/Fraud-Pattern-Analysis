@@ -46,6 +46,7 @@ Etherscan · Manual wallet tracing · No Chainalysis · No TRM
 **Pool:** 0xff69B4a1638B605DfdD92B1C6a7e9e48E4A010cD  
 **Loss:** 0.530 WETH extracted (includes funds deposited by buyers post-launch)
 
+
 ---
 
 ## Summary
@@ -79,9 +80,17 @@ Feb 19 2026 — Creator deposited 1,000,000,000 GMPEPE + 0.5 WETH.
 Received 0.707106 LP tokens. Pool created via OpenTrading() function  
 in token contract — trading enabled immediately.
 
+![30CDE445-AFE2-4631-B265-C4915CAF0339](https://github.com/user-attachments/assets/f8972a15-fa75-4a78-8620-6456834156c2)
+
+![8253B179-7346-436A-AF84-EA634FC6CA7B](https://github.com/user-attachments/assets/bc7f4cfc-c6a2-40d5-be4f-6628f971901c)
+
+
 **TX 2 — LP Lock on PinkSale**  
 Creator sent 0.707106 LP tokens to PinkSale time-lock contract.  
 Lock expiry: February 22 2026. Advertised to buyers as security guarantee.
+
+![995E85AD-76A0-4102-AB66-18EAEE9DEFC3](https://github.com/user-attachments/assets/3c62f754-89c1-4c70-8608-5409bbc91425)
+
 
 **TX 3 — LP Unlock**  
 `0x7b7c0e2dc98396b159590e76e2127c9fb469daaabacd64e829f8bee2c6508ddf`  
@@ -93,28 +102,24 @@ Feb 22 2026 — Creator burned LP tokens against pool.
 Withdrew 979,588,731 GMPEPE + 0.530 WETH.  
 Pool emptied. Token price collapsed to zero.
 
+![027D0418-215A-4351-A7BE-F4550C91F22A](https://github.com/user-attachments/assets/f098c3cc-2c93-4e4e-9641-eeadc6d6d8ec)
+
+
 ---
 
 ## Red Flags Visible Before Rug Executed
 
 **1 — MaxTxAmountUpdated event in launch transaction logs**  
-Token contract imposed transaction size limits. Overwhelmingly  
-associated with pump and dump tokens. Limits seller size  
-while creator accumulates exit position.
+Token contract imposed transaction size limits. Overwhelmingly associated with pump and dump tokens. Limits seller size while creator accumulates exit position.
 
 **2 — 3-day lock duration**  
-PinkSale lock until Feb 22 — 3 days from launch.  
-Minimum credible lock is 6 months. 3 days signals intent to exit quickly.
+PinkSale lock until Feb 22 — 3 days from launch. Minimum credible lock is 6 months. 3 days signals intent to exit quickly.
 
 **3 — Pool size: 0.5 WETH (~$1,000)**  
-Trivially small liquidity. Any serious buyer moves price dramatically.  
-Designed for pump not for legitimate trading infrastructure.
+Trivially small liquidity. Any serious buyer moves price dramatically. Designed for pump not for legitimate trading infrastructure.
 
 **4 — OpenTrading() function in token contract**  
-Creator controlled exact moment trading began.  
-Contracts with trading on/off switches often include  
-additional hidden functions — honeypot mechanics,  
-hidden mint capability, proxy drain functions.
+Creator controlled exact moment trading began. Contracts with trading on/off switches often include  additional hidden functions — honeypot mechanics, hidden mint capability, proxy drain functions.
 
 ---
 
@@ -154,7 +159,7 @@ duration disclosed publicly or obscured in marketing materials?
 Misrepresentation of lock duration strengthens fraud case.
 
 4. Profile 0x13D856 funding source. If funded from Tornado Cash  
-or through a peel chain — creator anticipated law enforcement  
+or through a peel chain creator anticipated law enforcement  
 attention and pre-obfuscated identity.
 
 ---
@@ -163,5 +168,4 @@ attention and pre-obfuscated identity.
 
 This fraud was invisible from the launch transaction alone.  
 It was identified by following the creator wallet forward  
-through subsequent transactions — standard FIU methodology.  
-The transaction you are assigned is the thread. Pull it.
+through subsequent transactions i.e. standard FIU methodology.  
