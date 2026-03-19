@@ -1,8 +1,8 @@
 # Fraud-Pattern-Analysis
-On-chain fraud reconstruction from raw transaction data — rug pulls, exploits, and laundering patterns decoded without tools
-# Fraud Pattern Analysis
+On-chain investigation casebook — fraud reconstruction, protocol failures, 
+and attack pattern analysis decoded from raw transaction data without tools
 
-On-chain fraud investigation casebook. Each case is reconstructed 
+Okay On-chain fraud investigation casebook. Each case is reconstructed 
 from raw transaction data — no blockchain analytics tools. 
 Etherscan, manual tracing, creator wallet profiling.
 
