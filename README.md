@@ -1,25 +1,23 @@
-# Fraud-Pattern-Analysis
-On-chain investigation casebook — fraud reconstruction, protocol failures, 
-and attack pattern analysis decoded from raw transaction data without tools
+# Fraud Pattern Analysis
 
-Okay On-chain fraud investigation casebook. Each case is reconstructed 
-from raw transaction data — no blockchain analytics tools. 
-Etherscan, manual tracing, creator wallet profiling.
+On-chain investigation casebook — fraud reconstruction, protocol 
+failures, and attack pattern analysis decoded from raw transaction 
+data without tools.
 
-Built while completing a self-directed crypto forensics curriculum
-focused on exchange FIU and blockchain analytics firm workflows.
+Each case is reconstructed from raw Etherscan data — 
+no Chainalysis, no TRM Labs, no blockchain analytics tools.
+
+Built during a self-directed crypto forensics curriculum focused 
+on exchange FIU and blockchain analytics firm workflows.
 
 ---
+
+## Cases
 
 | # | Case | Chain | Loss | Status |
 |---|------|-------|------|--------|
-| 001 | Soft Rug / LP Lock Theater — GMPEPE | Ethereum | ~0.53 WETH + buyer losses | ✅ Complete |
-| 002 | CoW Protocol Solver Routing Failure — $50M Slippage Event | Ethereum | $50,395,611 | ✅ Complete |
-```
-
----
-
-```
+| [001](cases/001-gmpepe-soft-rug/README.md) | Soft Rug / LP Lock Theater — GMPEPE | Ethereum | ~0.53 WETH + buyer losses | ✅ Complete |
+| [002](cases/002-cow-protocol-solver-failure/README.md) | CoW Protocol Solver Routing Failure — $50M Slippage Event | Ethereum | $50,395,611 | ✅ Complete |
 
 ---
 
@@ -27,21 +25,22 @@ focused on exchange FIU and blockchain analytics firm workflows.
 
 Every case follows the same structure:
 
-- **Mechanism** — how the fraud worked at transaction level
-- **Red Flags** — signals visible before the rug executed
-- **Timeline** — block-by-block reconstruction
-- **Victim Impact** — who lost, how much, when
-- **Investigative Next Steps** — what a real FIU analyst would do next
+**Mechanism** — how the fraud or failure worked at transaction level
+
+**Evidence** — raw Etherscan data, logs, internal transactions
+
+**Mathematics** — on-chain verified calculations where applicable
+
+**Investigative Framework** — how to distinguish this pattern 
+from similar legitimate activity
+
+**Compliance Gaps** — regulatory blind spots exposed by the case
 
 ---
 
 ## Tools Used
 
 Etherscan · Manual wallet tracing · No Chainalysis · No TRM
-
-
-
-  
 
 
 
