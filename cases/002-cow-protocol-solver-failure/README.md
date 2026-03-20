@@ -56,7 +56,7 @@ compliance gaps in intent-based DEX architecture.
 | Execution Contract | 0x699C5BD4...4e4D35c8 | Solver's routing contract |
 | CoW Settlement | 0x9008D19f...560ab41 | Order coordinator |
 | Uniswap V3 USDT Pool | 0x4e68Ccd3...960dFa36 | First swap hop |
-| SushiSwap AAVE Pool | 0xD75EA151...9df57B4 | Second swap hop — catastrophe |
+| SushiSwap AAVE Pool | 0xD75EA151...9df57B4 | Second swap hop - catastrophe |
 
 ---
 
