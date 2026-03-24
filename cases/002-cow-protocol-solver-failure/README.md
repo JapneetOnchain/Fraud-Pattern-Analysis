@@ -422,13 +422,6 @@ fraud. Current regulatory frameworks have not addressed
 any of these gaps. This will become a larger problem 
 as institutional capital enters DeFi at scale.
 
-**For protocol developers:**
-The solver had full reserve information via GetReserves 
-before routing. A minimum liquidity threshold, rejecting 
-any pool where depth is insufficient relative to order 
-size, would have prevented this entirely. The information 
-was there. The logic to act on it was not.
-
 ---
 
 ## Transaction Reference
