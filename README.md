@@ -16,9 +16,9 @@ on exchange FIU and blockchain analytics firm workflows.
 
 | # | Case | Chain | Loss | Status |
 |---|------|-------|------|--------|
-| [001](cases/001-gmpepe-soft-rug/README.md) | Soft Rug / LP Lock Theater — GMPEPE | Ethereum | ~0.53 WETH + buyer losses | ✅ Complete |
-| [002](cases/002-cow-protocol-solver-failure/README.md) | CoW Protocol Solver Routing Failure — $50M Slippage Event | Ethereum | $50,395,611 | ✅ Complete |
-| [003](cases/003-resolv-usr-exploit/README.md) | Privileged Key Abuse — Resolv USR Exploit | Ethereum | ~$25M | ✅ Complete |
+| [001](cases/001-gmpepe-soft-rug/README.md) | Soft Rug / LP Lock Theater - GMPEPE | Ethereum | ~0.53 WETH + buyer losses | ✅ Complete |
+| [002](cases/002-cow-protocol-solver-failure/README.md) | CoW Protocol Solver Routing Failure $50M Slippage Event | Ethereum | $50,395,611 | ✅ Complete |
+| [003](cases/003-resolv-usr-exploit/README.md) | Privileged Key Abuse - Resolv USR Exploit | Ethereum | ~$25M | ✅ Complete |
 
 ---
 
