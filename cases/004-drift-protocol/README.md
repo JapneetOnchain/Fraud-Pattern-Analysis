@@ -335,7 +335,7 @@ Multiple blockchain analytics firms flagged this exploit as consistent with DPRK
 
 5. The exact withdrawGuardThreshold before and after values for each affected market were extracted from program logs.
 
-6. As of April 4, 2026, 24,881 ETH ($51M) remains in the primary Ethereum exploiter wallet, unlaundered. This is current data not available in any prior report.
+6. As of April 4, 2026, 24,881 ETH ($51M) remains in the primary Ethereum exploiter wallet, unlaundered.
 
 7. 477,375 USDY was identified in the Solana drain wallet as a regulated asset with freeze capability. Ondo Finance subsequently froze these tokens.
 
