@@ -342,4 +342,51 @@ The following findings were not present in any published report reviewed during 
 
 ---
 
+## The Human Operation Behind the On-Chain Evidence
+
+The on-chain findings in this case cover the technical preparation and execution phase. Drift Protocol's own post-incident disclosure reveals the off-chain operation that made it all possible.
+
+### Six Months of Infiltration
+
+According to Drift's preliminary report, the attack began in Fall 2025 when contributors were approached at a major crypto conference by individuals presenting as a quantitative trading firm. What followed was six months of deliberate relationship building across multiple conferences in multiple countries.
+
+The group deposited over $1M of their own capital into a Drift Ecosystem Vault between December 2025 and January 2026. They participated in working sessions, asked informed product questions, and built a functioning operational presence inside the ecosystem. By the time of the exploit, Drift contributors had worked with and met these individuals in person across half a year.
+
+At the moment of the exploit, their Telegram chats and malicious software were completely scrubbed. The individuals who appeared in person were not North Korean nationals. DPRK threat actors at this level are known to use third-party intermediaries for face-to-face relationship building.
+
+### The Technical Compromise Vectors
+
+Drift's investigation identified two likely entry points:
+
+1. One contributor may have cloned a code repository shared by the group, triggering a known VSCode and Cursor vulnerability active from December 2025 through February 2026. Simply opening a file in the editor was sufficient to silently execute arbitrary code with no prompt or warning of any kind.
+
+2. A second contributor was induced to download a TestFlight application the group presented as their wallet product.
+
+Full device forensics are still underway with Mandiant engaged for the investigation.
+
+### Attribution: UNC4736 / Citrine Sleet
+
+With medium-high confidence, Drift's report assesses this operation was carried out by the same group responsible for the October 2024 Radiant Capital hack, attributed by Mandiant to UNC4736, also tracked as AppleJeus or Citrine Sleet, a North Korean state-affiliated threat actor. Both on-chain fund flows and operational persona overlaps connect this to the Radiant attackers. Mandiant has not yet formally attributed this exploit pending completed device forensics.
+
+### How This Contextualizes the On-Chain Findings
+
+By March 12 when CVT was created, the attackers had already spent roughly four months building access. The on-chain work we traced was the technical execution phase of an operation that started much earlier in the real world.
+
+Two original findings from this investigation now make more sense in this context. The attacker admin wallet H7PiGq was brand new on March 31 despite months of prior access. This reflects deliberate operational discipline: keep execution infrastructure clean and separate from the access infrastructure until the final window. The one-second governance execution reflects the same discipline. Everything was scripted, pre-signed, and fired at a chosen moment from a compromised machine.
+
+### What This Means for Compliance Teams
+
+On-chain monitoring alone cannot detect or prevent this threat model. A group that deposits real capital, builds genuine relationships over six months, and exploits developer tooling vulnerabilities leaves no on-chain footprint until the execution phase. By that point the governance infrastructure is already compromised.
+
+Practical implications:
+
+- Counterparty due diligence must include identity verification of individuals, not just entities
+- Developer devices that touch multisig infrastructure should be treated as high-risk endpoints
+- Code shared by external parties should be reviewed in isolated environments regardless of relationship length
+- Multisig governance operations should be conducted from dedicated devices not used for external communications
+
+*Source: Drift Protocol post-incident disclosure, April 2026. Some details remain high-level to protect the active Mandiant investigation. This section reflects only what Drift has publicly disclosed.*
+
+---
+
 *Investigation conducted April 4, 2026. All Solana findings verified via Solscan primary source data. Ethereum findings verified via Etherscan. Cross-chain flow analysis via Arkham Intelligence.*
