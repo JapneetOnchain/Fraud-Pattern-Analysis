@@ -1,4 +1,4 @@
-# Case 004: Drift Protocol : $285M Oracle Manipulation and Governance Takeover
+# Case 004: Drift Protocol $285M Governance Takeover & Admin Abuse (April 2026)
 
 **Chain:** Solana (cross-chain cashout to Ethereum)  
 **Date:** April 1, 2026  
@@ -324,7 +324,6 @@ Multiple blockchain analytics firms flagged this exploit as consistent with DPRK
 
 ## Original Findings Summary
 
-The following findings were not present in any published report reviewed during this investigation:
 
 1. The CVT creator wallet directly funded Drift Multisig #3 at 16:02:38 on April 1, two minutes and 41 seconds before the governance execution. Verified from both wallet transaction histories.
 
@@ -342,7 +341,7 @@ The following findings were not present in any published report reviewed during 
 
 ---
 
-## The Human Operation Behind the On-Chain Evidence
+## The Human Operation Behind the On-Chain Evidence (UPDATE FROM DRIFT)
 
 The on-chain findings in this case cover the technical preparation and execution phase. Drift Protocol's own post-incident disclosure reveals the off-chain operation that made it all possible.
 
