@@ -277,7 +277,134 @@ The use of Circle's CCTP as the primary bridge created a traceable, regulated ch
 Multiple blockchain analytics firms flagged this exploit as consistent with DPRK Lazarus Group methodology. This was described as the 18th suspected DPRK attack of 2026. DPRK attribution carries direct OFAC implications for any VASP or financial institution that processes funds tracing back to these wallets, even unknowingly.
 
 ---
+## Dune Analytics:Ethereum Exploiter Wallet Monitoring
 
+To complement the manual trace, I built a Dune query to track all 
+transactions to and from the primary Ethereum exploiter wallet 
+(0xD3FEEd5DA83D8e8c449d6CB96ff1eb06ED1cF6C7) from April 1, 2026 onwards.
+
+**Query:**
+```sql
+SELECT
+  block_time,
+  "from",
+  "to",
+  value / 1e18 AS eth_value
+FROM ethereum.transactions
+WHERE "to" = 0xD3FEEd5DA83D8e8c449d6CB96ff1eb06ED1cF6C7
+OR "from" = 0xD3FEEd5DA83D8e8c449d6CB96ff1eb06ED1cF6C7
+AND block_time >= TIMESTAMP '2026-04-01 00:00'
+ORDER BY block_time ASC
+```
+
+### What the Data Shows
+
+**ETH Accumulation (April 1, 18:48 to 22:08 UTC)**
+
+Ten large inflows totalling roughly 23,000 ETH arrived within 3.5 hours 
+of the exploit, each from a different source address. This is consistent 
+with funds arriving from multiple bridge outputs and CoW Protocol swap 
+settlements running in parallel.
+
+| Time (UTC) | From | ETH Value |
+|------------|------|-----------|
+| 18:48 | 0x3b02453060... | 3,324.69 |
+| 18:48 | 0x54d439f542... | 1,574.41 |
+| 18:49 | 0xae2924ce98... | 1,180.97 |
+| 18:50 | 0xd91a122b58... | 787.97 |
+| 18:59 | 0xb75b4dc40a... | 1,957.21 |
+| 19:25 | 0x4f4a4557a1... | 2,357.51 |
+| 19:56 | 0xc47daea4bd... | 2,732.87 |
+| 20:26 | 0xa251a3f239... | 1,815.88 |
+| 20:49 | 0x7bf64e4c86... | 2,696.83 |
+| 22:08 | 0x674a38c319... | 3,385.05 |
+
+**Chainflip Address Cross-Verification**
+
+The Chainflip intermediate address `0xd91a122b585bc588c9a48d0995ee0d7b4f8ab7dd` 
+shows up in the Dune data at 18:50 UTC sending 787.97 ETH. This independently 
+confirms the manual trace finding documented in the fund flow section above.
+
+**Address Poisoning Attempt**
+
+From 21:35 UTC, multiple dust transactions of 0.0000001 ETH were sent to 
+the exploiter wallet from `0x4293b5dc11b250078da7359d7d57c15eecfcf70a`. 
+Classic address poisoning. Someone trying to insert their address into 
+the exploiter's transaction history hoping funds get misdirected.
+
+**Dormant Holding Pattern**
+
+From April 2 onwards only zero value contract interactions are visible. 
+No significant outflows as of the investigation date. This is consistent 
+with known DPRK holding behaviour where funds sit dormant for weeks 
+before laundering begins.
+
+### Compliance Implication
+
+Any VASP or financial institution processing transactions from addresses 
+in this cluster carries live OFAC exposure. The wallet being dormant 
+does not reduce risk. If anything it widens the window where screening 
+alerts should be active.
+
+### Findings
+
+**Finding 1 — ETH Accumulation Pattern (April 1, 18:48 to 22:08 UTC)**
+
+Ten large inflows totalling approximately 23,000 ETH arrived within 
+approximately 3.5 hours of the exploit. Each transfer originated from 
+a different source address — consistent with dispersal from multiple 
+bridge outputs and CoW Protocol swap settlements running simultaneously.
+
+| Time (UTC) | From | ETH Value |
+|------------|------|-----------|
+| 18:48 | 0x3b02453060... | 3,324.69 |
+| 18:48 | 0x54d439f542... | 1,574.41 |
+| 18:49 | 0xae2924ce98... | 1,180.97 |
+| 18:50 | 0xd91a122b58... | 787.97 |
+| 18:59 | 0xb75b4dc40a... | 1,957.21 |
+| 19:25 | 0x4f4a4557a1... | 2,357.51 |
+| 19:56 | 0xc47daea4bd... | 2,732.87 |
+| 20:26 | 0xa251a3f239... | 1,815.88 |
+| 20:49 | 0x7bf64e4c86... | 2,696.83 |
+| 22:08 | 0x674a38c319... | 3,385.05 |
+
+**Finding 2 — Chainflip Address Cross-Verification**
+
+The Chainflip intermediate address `0xd91a122b585bc588c9a48d0995ee0d7b4f8ab7dd` 
+appears in the Dune data at 18:50 UTC sending 787.97 ETH — independently 
+confirming the manual trace finding documented in the fund flow section above. 
+This cross-verification between manual tracing and on-chain query data confirms 
+the accuracy of the fund flow reconstruction.
+
+**Finding 3 — Address Poisoning Attempt**
+
+From 21:35 UTC on April 1, multiple dust transactions of 0.0000001 ETH 
+were sent to the exploiter wallet from address 
+`0x4293b5dc11b250078da7359d7d57c15eecfcf70a`. 
+
+This is a classic address poisoning attack — sending dust transactions 
+to insert a lookalike address into the exploiter's transaction history, 
+hoping funds are accidentally sent to the attacker's address during 
+future movements.
+
+**Finding 4 — Dormant Holding Pattern**
+
+From April 2 onwards only zero value contract interactions are visible. 
+No significant outflows from this wallet are present in the data as of 
+the investigation date. This dormant pattern is consistent with known 
+DPRK fund holding behaviour — stolen assets typically sit for weeks or 
+months before laundering begins, allowing blockchain monitoring attention 
+to decrease before movement occurs.
+
+### Compliance Implication
+
+This wallet represents a live OFAC exposure risk for any VASP or 
+financial institution that processes transactions from addresses in 
+this cluster. The dormant status does not reduce risk — it increases 
+the window during which compliance teams should maintain screening 
+alerts on these addresses.
+
+---
 ## Key Addresses
 
 ### Solana
