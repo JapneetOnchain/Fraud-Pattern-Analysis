@@ -297,6 +297,8 @@ AND block_time >= TIMESTAMP '2026-04-01 00:00'
 ORDER BY block_time ASC
 ```
 
+![8F336B66-DF9F-4A10-A2C1-52F2E4A11AAF](https://github.com/user-attachments/assets/770aceaf-0762-4d5b-b41b-55c6af8a8a49)
+
 ### What the Data Shows
 
 **ETH Accumulation (April 1, 18:48 to 22:08 UTC)**
